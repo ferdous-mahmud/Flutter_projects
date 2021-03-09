@@ -3,7 +3,7 @@
                                State of Widget
 --------------------------------------------------------------------------------
 
-    2 kinds of widgets:
+    2 kinds of (state) widgets:
 
                ## StatelessWidget
 
@@ -12,6 +12,42 @@
                   initState() -- use for create each state object
                   setState() -- use for changing internal state of widget
                   ## -- A widget state is store in a state object
+
+    
+
+    All types of Widget on Flutter:
+
+              1. Layout Type Widgets
+                    - Container
+                    - Row
+                    - Column
+                    - ListView
+                    - Stack
+                    - GridView
+
+              2. Content Container Type Widget
+                    - Stack
+                    - Card
+
+              3. Repetitive Type Widget
+                    - ListView
+                    - GridView
+                    - ListTile
+
+              4. Content Types Widget
+                    - Text
+                    - Image
+                    - Icon
+
+              5. User Input Type Widget
+                    - TextField
+                    - RaisedButton
+                    - FlatButton
+                    - InkWell
+                    - GusterDetector
+
+
+
 
  */
 

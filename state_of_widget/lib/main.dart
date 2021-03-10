@@ -56,6 +56,8 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(
     MaterialApp(
+      // stop showing debug banner
+      debugShowCheckedModeBanner: false,
       title: 'State of widget',
       home: Scaffold(
         appBar: AppBar(

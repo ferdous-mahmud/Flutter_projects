@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,18 +17,37 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.teal,
-        body: Container(
-          /*  color: Colors.red, */
-          child: Text(
-            '2.05 Mbps',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-              fontSize: 13,
-              fontFamily: 'Raleway',
-            ),
+        body: SafeArea(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                height: double.infinity,
+                width: 100,
+                color: Colors.red,
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    height: 100,
+                    width: 100,
+                    color: Colors.yellow,
+                  ),
+                  Container(
+                    height: 100,
+                    width: 100,
+                    color: Colors.green,
+                  ),
+                ],
+              ),
+              Container(
+                width: 100,
+                height: double.infinity,
+                color: Colors.blue,
+              ),
+            ],
           ),
-          margin: EdgeInsets.only(left: 30.0, top: 6.0),
         ),
       ),
     );

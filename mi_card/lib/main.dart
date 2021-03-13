@@ -18,33 +18,98 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.teal,
         body: SafeArea(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                height: double.infinity,
-                width: 100,
-                color: Colors.red,
-              ),
-              Column(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    height: 100,
-                    width: 100,
-                    color: Colors.yellow,
-                  ),
-                  Container(
-                    height: 100,
-                    width: 100,
-                    color: Colors.green,
+                    child: CircleAvatar(
+                      radius: 50.0,
+                      backgroundImage: AssetImage('images/user.png'),
+                    ),
                   ),
                 ],
               ),
-              Container(
-                width: 100,
-                height: double.infinity,
-                color: Colors.blue,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    child: Text(
+                      'Angela Yu',
+                      style: TextStyle(
+                        fontFamily: 'Raleway',
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                    margin: EdgeInsets.all(5),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    child: Text(
+                      'FLUTTER DEVELOPER',
+                      style: TextStyle(
+                        fontFamily: 'Raleway',
+                        fontSize: 13.0,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 2.5,
+                        color: Colors.teal[100],
+                      ),
+                    ),
+                    margin: EdgeInsets.all(5),
+                  ),
+                ],
+              ),
+              SizedBox(
+                width: 150.0,
+                child: Divider(
+                  color: Colors.teal[200],
+                ),
+              ),
+              Card(
+                margin: EdgeInsets.fromLTRB(15, 10, 15, 0),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.phone,
+                    color: Colors.teal[900],
+                  ),
+                  title: Text(
+                    '+44 123 456 789',
+                    style: TextStyle(
+                      fontFamily: 'Raleway',
+                      fontSize: 13.0,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 2.5,
+                      color: Colors.teal[900],
+                    ),
+                  ),
+                ),
+              ),
+              Card(
+                margin: EdgeInsets.fromLTRB(15, 10, 15, 0),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.email,
+                    color: Colors.teal[900],
+                  ),
+                  title: Text(
+                    'example@gmail.com',
+                    style: TextStyle(
+                      fontFamily: 'Raleway',
+                      fontSize: 13.0,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 2.5,
+                      color: Colors.teal[900],
+                    ),
+                  ),
+                ),
               ),
             ],
           ),

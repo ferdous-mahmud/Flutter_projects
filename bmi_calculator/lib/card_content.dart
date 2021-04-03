@@ -1,11 +1,5 @@
 import 'package:flutter/material.dart';
-
-const lableTextStyle = TextStyle(
-  fontSize: 18.0,
-  color: Color(0xFF8D8E98),
-);
-const iconSize = 80.0;
-const sizedBoxHeight = 15.0;
+import 'constants.dart';
 
 class CardContent extends StatelessWidget {
   CardContent({@required this.cardIcon, @required this.cardText});
@@ -18,13 +12,13 @@ class CardContent extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Icon(cardIcon, size: iconSize),
+        Icon(cardIcon, size: kIconSize),
         SizedBox(
-          height: sizedBoxHeight,
+          height: kSizedBoxHeight,
         ),
         Text(
           cardText,
-          style: lableTextStyle,
+          style: kLableTextStyle,
         ),
       ],
     );

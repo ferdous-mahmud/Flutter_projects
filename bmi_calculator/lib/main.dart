@@ -10,7 +10,7 @@ class BMIApp extends StatelessWidget {
     return MaterialApp(
       routes: {
         '/': (context) => InputPage(),
-        '/result': (context) => ResultPage(),
+        /* '/result': (context) => ResultPage(), */
       },
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(

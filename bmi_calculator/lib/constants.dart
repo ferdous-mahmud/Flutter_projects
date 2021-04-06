@@ -14,7 +14,12 @@ const kLableTextStyle = TextStyle(
   color: Color(0xFF8D8E98),
 );
 
-const KLableNumberSytle = TextStyle(
+const kLableNumberSytle = TextStyle(
   fontSize: 50.0,
   fontWeight: FontWeight.w900,
+);
+
+const kBottonContainerTextStyle = TextStyle(
+  fontSize: 25.0,
+  fontWeight: FontWeight.bold,
 );

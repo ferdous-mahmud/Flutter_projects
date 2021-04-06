@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'screen1.dart';
-import 'screen2.dart';
 
 class Screen0 extends StatelessWidget {
   @override
@@ -25,10 +23,7 @@ class Screen0 extends StatelessWidget {
               ),
               onPressed: () {
                 //Navigate to Screen 1
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Screen1()),
-                );
+                Navigator.pushNamed(context, '/first');
               },
             ),
             TextButton(
@@ -43,10 +38,7 @@ class Screen0 extends StatelessWidget {
               ),
               onPressed: () {
                 //Navigate to Screen 2
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Screen2()),
-                );
+                Navigator.pushNamed(context, '/second');
               },
             ),
           ],

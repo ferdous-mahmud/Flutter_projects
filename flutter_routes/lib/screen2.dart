@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_routes/screen1.dart';
 
 class Screen2 extends StatelessWidget {
   @override
@@ -21,10 +20,7 @@ class Screen2 extends StatelessWidget {
             ),
           ),
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => Screen1()),
-            );
+            Navigator.pushNamed(context, '/first');
           },
         ),
       ),

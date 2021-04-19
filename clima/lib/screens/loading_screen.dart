@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:clima/services/location.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
+import 'package:clima/services/networking.dart';
+import 'package:clima/screens/location_screen.dart';
 
 class LoadingScreen extends StatefulWidget {
   @override
@@ -9,7 +9,7 @@ class LoadingScreen extends StatefulWidget {
 }
 class _LoadingScreenState extends State<LoadingScreen> {
 
-  final String apiKey = '979a625e81843868b88a359e97c97908';
+  final String appId = '979a625e81843868b88a359e97c97908';
   double latitude;
   double longitude;
   
@@ -17,38 +17,32 @@ class _LoadingScreenState extends State<LoadingScreen> {
   @override
   void initState() {
     super.initState();
-    getLocation();
-    getData();
+    getLocationData();
   }
   // Get location using geolocator 
-  void getLocation() async{
+  void getLocationData() async{
     Location location = Location();
     await location.getCurrentLocatin();
+
     latitude = location.latitude;
     longitude = location.longitude;
+    
+    NetworkHelper networkHelper = NetworkHelper(url:'api.openweathermap.org', path:'/data/2.5/weather', lat: '$latitude', lon: '$longitude', appid: '$appId');
+
+    var weatherData = await networkHelper.getData();
+   
+    double temperature = weatherData['main']['temp'];
+    String condition = weatherData['weather'][0]['main'];
+    String cityName = weatherData['name'];
+
+    print('Temperature = $temperature  Condition = $condition  City = $cityName');
   }
 
-  void getData() async {
-    var uri = Uri.https('api.openweathermap.org', 'data/2.5/weather?lat=$latitude&lon=$longitude&appid=$apiKey');
-    http.Response response = await http.get(uri);
-    if(response.statusCode == 200){
-        String data = response.body;
-
-        var decodedData = jsonDecode(data);
-
-        var lon = decodedData['coord']['lon'];
-        print('Longitude $lon');
-      }else{
-        int statusCode = response.statusCode;
-        print('Status Code => $statusCode');
-      } 
-      print(response.body);
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+      body: LocationScreen(),
     );
   }
 }
